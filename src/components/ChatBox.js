@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
 const Chatbox = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
-  const [inputValue, setInputValue] = useState('');
-  const messageContainerRef = useRef(null);  // Reference for the message container
+  const [inputValue, setInputValue] = useState("");
+  const [showFirstTimeNotice, setShowFirstTimeNotice] = useState(true);
+  const messageContainerRef = useRef(null); // Reference for the message container
 
   const toggleChatbox = () => {
     setIsOpen(!isOpen);
@@ -17,60 +18,85 @@ const Chatbox = () => {
   const sendMessage = async () => {
     if (!inputValue.trim()) return;
 
-    const userMessage = { name: 'Visitor', message: inputValue };
+    const userMessage = { name: "Visitor", message: inputValue };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
+
+    if (showFirstTimeNotice) {
+      setShowFirstTimeNotice(false);
+    }
 
     // Call the Flask backend
     try {
-      const response = await fetch('https://my-portfolio-backend-93gm.onrender.com/predict', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ message: inputValue }),
-      });
+      const response = await fetch(
+        "https://my-portfolio-backend-93gm.onrender.com/predict",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: inputValue }),
+        }
+      );
 
       const data = await response.json();
-      const botMessage = { name: 'Kirsy', message: data.answer };
+      const botMessage = { name: "Kirsy", message: data.answer };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
 
-    setInputValue('');
+    setInputValue("");
   };
 
   // Auto-scroll to the bottom when a new message is added
   useEffect(() => {
     if (messageContainerRef.current) {
-      messageContainerRef.current.scrollTop = messageContainerRef.current.scrollHeight;
+      messageContainerRef.current.scrollTop =
+        messageContainerRef.current.scrollHeight;
     }
-  }, [messages]);  // Run this effect whenever `messages` updates
+  }, [messages]); // Run this effect whenever `messages` updates
 
   return (
-    <div className={`chatbox ${isOpen ? 'chatbox--active' : ''}`}>
+    <div className={`chatbox ${isOpen ? "chatbox--active" : ""}`}>
       <div className="chatbox__header" onClick={toggleChatbox}>
         <h4>Have a question about me?</h4>
       </div>
       {isOpen && (
         <div className="chatbox__content">
-          <div className="chatbox__messages" ref={messageContainerRef} style={{ maxHeight: '300px', overflowY: 'auto' }}>
+          {showFirstTimeNotice && (
+            <div className="chatbox__notice">
+              <small>
+                ⏱️ First message may take a few minutes as the system starts up.
+                Thank you for your patience!
+              </small>
+            </div>
+          )}
+          <div
+            className="chatbox__messages"
+            ref={messageContainerRef}
+            style={{ maxHeight: "300px", overflowY: "auto" }}
+          >
             {messages.map((msg, index) => (
-              <div key={index} className={msg.name === 'Visitor' ? 'user-message' : 'bot-message'}>
+              <div
+                key={index}
+                className={
+                  msg.name === "Visitor" ? "user-message" : "bot-message"
+                }
+              >
                 <strong>{msg.name}:</strong> {msg.message}
               </div>
             ))}
           </div>
           <div class="chatbox__footer">
-          <input
-            type="text"
-            placeholder="Write a message..."
-            value={inputValue}
-            onChange={handleInputChange}
-            onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
-          />
-          <button onClick={sendMessage}>Send</button>
-           </div>
+            <input
+              type="text"
+              placeholder="Write a message..."
+              value={inputValue}
+              onChange={handleInputChange}
+              onKeyPress={(e) => e.key === "Enter" && sendMessage()}
+            />
+            <button onClick={sendMessage}>Send</button>
+          </div>
         </div>
       )}
     </div>
