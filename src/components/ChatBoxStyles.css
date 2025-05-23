@@ -5,11 +5,9 @@
     width: 350px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    /* box-shadow: 0 0 10px yellow (0, 0, 0, 0.1); */
     display: flex;
     flex-direction: column;
     transition: all 0.3s;
-    /* z-index: 1000; */
     background-color: white;
 
   }
@@ -19,6 +17,10 @@
     color: white;
     padding: 10px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
   }
   
   .chatbox__content {
