@@ -9,7 +9,7 @@ const ProjectCard = (props) => {
       <img src={props.imgsrc} alt="project-image" />
       <h2 className="project-title">{props.title}</h2>
       <div className="pro-details">
-        <p>This is text</p>
+        <p>{props.text}</p>
         <div className="pro-btns">
           {props.view && (
             <NavLink to={props.view} className="btn">

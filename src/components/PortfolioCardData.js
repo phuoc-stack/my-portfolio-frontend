@@ -5,14 +5,14 @@ const ProjectCardData = [
     {
         imgsrc:proj1, 
         title:"SkillPixel Lab",
-        text:"Airbnb Clone using MERN stack",
+        text:"A full-stack student lab platform integrated with Hoola E-Learning. Built with React frontend, Python backend, and Firestore database. Features responsive dashboards for students and instructors with role-based access control, API endpoints for Jupyter Notebook assignments with automated grading via nbgrader, and CI/CD deployment on Google Cloud Platform.",
         view: "https://lab.skillpixel.vn/",
         source: "",
     },
     {
         imgsrc:proj2, 
         title:"Airbnb Clone",
-        text:"Airbnb Clone using MERN stack",
+        text:"A scalable accommodation booking platform built with the MERN stack (MongoDB, Express, React, Node.js). Features user authentication, property listings with image uploads and booking management system. Implements core functionality with responsive design using Tailwind CSS.",
         view: "",
         source: "https://github.com/phuoc-stack/Airbnb-Clone",
     },
