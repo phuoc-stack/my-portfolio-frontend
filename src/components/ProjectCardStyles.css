@@ -46,14 +46,12 @@
 
 .pro-btns {
     display: flex;
-    justify-content: space-between;
     padding: 0.5rem 0;
     gap: 10px;
+    justify-content: center;
 }
 
 .pro-btns .btn {
-    padding: 0.5rem 1rem;
-    flex: 1;
     text-align: center;
 }
 
