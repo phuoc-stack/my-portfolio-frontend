@@ -1,23 +1,32 @@
-import pro1 from "../assets/logo.png"
+import proj1 from "../assets/skillpixellab.png"
+import proj2 from "../assets/airbnb.png"
 
 const ProjectCardData = [
     {
-        imgsrc:pro1, 
-        title:"AirBnb Clone",
+        imgsrc:proj1, 
+        title:"SkillPixel Lab",
         text:"Airbnb Clone using MERN stack",
-        view: ""
+        view: "https://lab.skillpixel.vn/",
+        source: "",
     },
     {
-        imgsrc:pro1, 
-        title:"AirBnb Clone",
+        imgsrc:proj2, 
+        title:"Airbnb Clone",
         text:"Airbnb Clone using MERN stack",
-        view: ""
+        view: "",
+        source: "https://github.com/phuoc-stack/Airbnb-Clone",
     },
     {
-        imgsrc:pro1, 
-        title:"AirBnb Clone",
+        imgsrc:proj1, 
+        title:"SmartNews",
         text:"Airbnb Clone using MERN stack",
-        view: ""
+        source: ""
+    },
+    {
+        imgsrc:proj1, 
+        title:"Innotech",
+        text:"Airbnb Clone using MERN stack",
+        source: ""
     },
 ]
 
