@@ -1,5 +1,6 @@
 import proj1 from "../assets/skillpixellab.png"
 import proj2 from "../assets/airbnb.png"
+import proj3 from "../assets/smartnews.png"
 
 const ProjectCardData = [
     {
@@ -17,10 +18,10 @@ const ProjectCardData = [
         source: "https://github.com/phuoc-stack/Airbnb-Clone",
     },
     {
-        imgsrc:proj1, 
+        imgsrc:proj3, 
         title:"SmartNews",
-        text:"Airbnb Clone using MERN stack",
-        source: ""
+        text:"An intelligent news platform powered by AI that provides personalized article recommendations with real-time sentiment analysis, bias detection, and interactive chatbot discussions using Google Gemini AI and BERT models.",
+        source: "https://github.com/Jesse0502/TDP_Project"
     },
     {
         imgsrc:proj1, 
