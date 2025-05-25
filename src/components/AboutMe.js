@@ -80,6 +80,7 @@ const AboutMe = () => {
               <span className="skill-tag">GitHub</span>
               <span className="skill-tag">Jira</span>
               <span className="skill-tag">Figma</span>
+              <span className="skill-tag">Data Science</span>
             </div>
           </div>
         </div>
