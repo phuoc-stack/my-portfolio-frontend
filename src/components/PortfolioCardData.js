@@ -23,12 +23,6 @@ const ProjectCardData = [
         text:"An intelligent news platform powered by AI that provides personalized article recommendations with real-time sentiment analysis, bias detection, and interactive chatbot discussions using Google Gemini AI and BERT models.",
         source: "https://github.com/Jesse0502/TDP_Project"
     },
-    {
-        imgsrc:proj1, 
-        title:"Innotech",
-        text:"Airbnb Clone using MERN stack",
-        source: ""
-    },
 ]
 
 export default ProjectCardData;
