@@ -18,7 +18,7 @@ const Footer = () => {
                 size={20}
                 style={{ color: "#fff", marginRight: "2rem" }}
               />
-              <p>Hawthorn, Melbourne</p>
+              <p>Darwin City, Darwin</p>
           </div>
           <div className="phone">
               <FaPhone

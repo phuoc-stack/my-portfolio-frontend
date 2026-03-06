@@ -1,4 +1,5 @@
 import React from "react";
+import { FaLaptopCode, FaChartLine } from "react-icons/fa";
 import "./AboutMeStyles.css";
 
 const AboutMe = () => {
@@ -114,7 +115,9 @@ const AboutMe = () => {
         <h2>Education</h2>
         <div className="education-grid">
           <div className="education-item">
-            <div className="edu-icon">🎓</div>
+            <div className="edu-icon">
+              <FaLaptopCode size={36} color="#4fc3f7" />
+            </div>
             <div className="edu-details">
               <h3>Master of Information Technology</h3>
               <h4>Software Development Major</h4>
@@ -125,7 +128,9 @@ const AboutMe = () => {
           </div>
 
           <div className="education-item">
-            <div className="edu-icon">📊</div>
+            <div className="edu-icon">
+              <FaChartLine size={36} color="#ffd54f" />
+            </div>
             <div className="edu-details">
               <h3>Bachelor of Economics and Finance</h3>
               <p>Royal Melbourne Institute of Technology</p>
