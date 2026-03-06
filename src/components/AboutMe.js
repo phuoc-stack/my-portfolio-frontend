@@ -9,11 +9,9 @@ const AboutMe = () => {
         <div className="about-text">
           <h2>About Me</h2>
           <p>
-            I'm Phuoc (Kirsy) Ho, a passionate software developer currently
-            pursuing a Master of Information Technology with a major in Software
-            Development at Swinburne University of Technology. I'm in my second
-            year and gaining hands-on experience as a Software Engineer Intern
-            at SkillPixel.
+            I'm Phuoc (Kirsy) Ho, a passionate software developer recently
+            completed a Master of Information Technology with a major in Software
+            Development at Swinburne University of Technology.
           </p>
           <p>
             My journey in technology combines academic excellence with practical
